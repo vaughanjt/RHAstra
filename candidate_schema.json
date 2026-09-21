@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiemannCandidateSpace",
+  "type": "object",
+  "required": [
+    "id",
+    "space",
+    "dynamics",
+    "operator",
+    "trace_formula",
+    "symmetries",
+    "claims"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "space": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "dimension_class": {
+          "enum": [
+            "finite",
+            "infinite",
+            "noncommutative",
+            "cohomological",
+            "unknown"
+          ]
+        },
+        "measure_or_inner_product": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "arithmetic_input": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "dynamics": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "generator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "primitive_objects": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "primitive_length_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "repetition_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "operator": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canonicality": {
+          "enum": [
+            "forced",
+            "natural",
+            "choice-dependent",
+            "unknown",
+            "missing"
+          ]
+        },
+        "self_adjoint_status": {
+          "enum": [
+            "proved",
+            "partial",
+            "conjectural",
+            "not-self-adjoint",
+            "unknown",
+            "missing"
+          ]
+        },
+        "spectrum_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "trace_formula": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "exact",
+            "partial",
+            "semiclassical",
+            "conjectural",
+            "missing"
+          ]
+        },
+        "prime_length_status": {
+          "enum": [
+            "exact",
+            "partial",
+            "emergent",
+            "inserted",
+            "missing",
+            "unknown"
+          ]
+        },
+        "prime_power_weight_status": {
+          "enum": [
+            "exact",
+            "partial",
+            "wrong",
+            "missing",
+            "unknown"
+          ]
+        },
+        "archimedean_status": {
+          "enum": [
+            "exact",
+            "partial",
+            "inserted",
+            "missing",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "symmetries": {
+      "type": "object",
+      "properties": {
+        "functional_equation_mechanism": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_rmt_class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "generalization": {
+      "type": "object",
+      "properties": {
+        "dirichlet_L": {
+          "enum": [
+            "natural",
+            "partial",
+            "ad_hoc",
+            "missing",
+            "unknown"
+          ]
+        },
+        "global_L_functions": {
+          "enum": [
+            "natural",
+            "partial",
+            "ad_hoc",
+            "missing",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "status"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "proved",
+              "published-claim",
+              "conjectural",
+              "heuristic",
+              "unknown"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
