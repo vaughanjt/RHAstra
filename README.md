@@ -1,10 +1,10 @@
-# Riemann Space Lab — Milestone 0
+# RHAstra
 
-This is a deliberately conservative scaffold for an AI-assisted search for a geometric/spectral
-structure behind the Riemann zeta function.
+RHAstra is a deliberately conservative scaffold for an AI-assisted search for a
+geometric or spectral structure behind the Riemann zeta function.
 
-The project does **not** attempt to "prove RH by brute force." It treats the problem as an
-inverse spectral search:
+The project does **not** try to prove RH by brute force. It treats the problem as
+an inverse-spectral search:
 
     target arithmetic/spectral fingerprints
                 ↓
@@ -16,95 +16,69 @@ inverse spectral search:
                 ↓
         positivity / self-adjointness
 
-## Design rule
+## Research rules
 
-A candidate is interesting only if the desired structure is **generated naturally** by the
-space/dynamics. It should not be rewarded for inserting known zeta zeros into its operator by
-definition.
+1. A candidate receives credit only for structure that is generated naturally by
+   the space/dynamics.
+2. Known zeta-zero locations may be used in explicitly labeled calibration
+   experiments, never as hidden input to a proposed construction.
+3. Unknown and unimplemented claims stay unknown; they are not scored as partial
+   success.
+4. Every claim carries provenance: proved, derived, published claim,
+   conjectural, heuristic, unknown, or not implemented.
 
-## Primary target fingerprints
+## Target fingerprints
 
-1. **Spectral counting law**
+A serious candidate should eventually explain:
 
-   Smooth Riemann–von Mangoldt term:
+- the smooth Riemann–von Mangoldt counting law;
+- primitive arithmetic lengths `log p` and repetitions `r log p`;
+- the correct prime-power amplitudes;
+- the archimedean / Γ-factor contribution;
+- the functional equation as a natural symmetry or duality;
+- a positivity or self-adjointness mechanism;
+- natural extension to broader L-functions;
+- GUE-like statistics as a late, non-identifying check.
 
-       N̄(T) = T/(2π) log(T/(2π)) - T/(2π) + 7/8
+## Candidate adapter contract
 
-2. **Prime-orbit length structure**
+Every executable candidate implements:
 
-   Primitive arithmetic lengths should arise naturally as
-
-       L_p = log p
-
-   with repetitions
-
-       L_{p,r} = r log p.
-
-3. **Prime-power amplitude structure**
-
-   The oscillatory zero density suggested by the explicit formula has the schematic form
-
-       d_osc(E) = -(1/π) Σ_p Σ_{r≥1} (log p)/p^(r/2) cos(E r log p).
-
-   The exact normalization depends on the chosen test-function/trace-formula convention.
-   We therefore test structural agreement before exact equality.
-
-4. **Archimedean contribution**
-
-   The Γ-factor / real-place term must emerge from the construction, not be added as an
-   arbitrary correction.
-
-5. **Functional-equation symmetry**
-
-       ξ(s) = ξ(1-s)
-
-   should correspond to a natural duality, involution, or geometric symmetry.
-
-6. **Positivity / self-adjointness**
-
-   A successful construction ultimately needs a mechanism that forces spectral parameters to
-   be real (or an equivalent Weil-positivity statement).
-
-7. **Family behavior**
-
-   A real theory should have a natural way to pass from ζ(s) to broader L-functions, rather
-   than being tuned only to one function.
-
-8. **GUE statistics**
-
-   This is useful, but it is intentionally a *late* gate because random-matrix universality
-   makes it much less identifying than an exact prime/zero trace formula.
-
-## Files
-
-- `candidate_schema.json` — machine-readable "genome" for proposed spaces.
-- `candidate_examples.json` — baseline descriptions of several known research directions.
-- `gates.py` — inexpensive numerical/structural rejection tests.
-- `benchmark.py` — sanity-checks target formulas using actual zeta zeros from `mpmath`.
-- `explicit_formula_benchmark.py` — numerically checks a Weil explicit-formula identity for a log-Gaussian test family.
-- `ROADMAP.md` — next milestones.
-
-## Run
-
-```bash
-python -m pip install -r requirements.txt
-python benchmark.py
-python explicit_formula_benchmark.py
-python gates.py candidate_examples.json
+```python
+candidate.spectral_side(test_function)
+candidate.geometric_side(test_function)
+candidate.archimedean_side(test_function)
+candidate.symmetry_report()
+candidate.positivity_report()
 ```
 
-## What Milestone 0 can and cannot do
+The base interface lives in `rhastra/candidates/base.py`. Literature-only
+descriptions are wrapped by `StaticCandidateAdapter`, whose numerical methods
+raise `NotImplementedError` rather than pretending descriptive evidence is an
+executable derivation.
 
-It can:
-- enforce a common representation across otherwise incomparable approaches;
-- reject candidates with the wrong counting asymptotics;
-- compare proposed orbit lengths and amplitudes with the prime-power template;
-- keep "evidence", "derived", and "assumed" claims separate.
+## Calibration benchmark
 
-It cannot yet:
-- derive a trace formula from a geometric model;
-- verify self-adjointness;
-- prove positivity;
-- synthesize genuinely new spaces.
+`rhastra.explicit_formula` implements the Weil explicit-formula regression for
 
-Those become the core tasks of Milestones 1–3.
+    f_sigma(x) = x^(-1/2) exp(-(log x)^2/(2 sigma^2)).
+
+Its spectral side intentionally uses known zeta zeros from `mpmath`. Results are
+therefore labeled `calibration-from-known-zeta-zeros` and are never admissible
+as independent candidate evidence.
+
+## Install and test
+
+```bash
+python -m pip install -e ".[dev]"
+pytest
+```
+
+Legacy top-level scripts remain for exploratory use while functionality migrates
+into the `rhastra` package.
+
+## Current milestones
+
+See [ROADMAP.md](ROADMAP.md). Milestone 2 establishes the executable candidate
+boundary; Milestone 3 will define a constrained mutation grammar over candidate
+geometry, dynamics, domains, measures, cocycles, and archimedean structure.
