@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "source_repository": "vaughanjt/RiemannHypothesisProof",
+  "purpose": "Transfer durable findings into RHAstra without importing proof claims or exploratory overconfidence.",
+  "statuses": {
+    "SURVIVES": "Reusable identity, theorem, rigorous finite result, or reproducible structural observation.",
+    "OPEN": "Promising formulation with an unresolved proof-level obstacle.",
+    "KILLED": "Route falsified or structurally invalid in the legacy work.",
+    "CIRCULAR": "Decisive step was found to encode essentially the same difficulty as RH."
+  },
+  "findings": [
+    {
+      "id": "L01",
+      "title": "Weil explicit-formula barrier reconstruction",
+      "status": "SURVIVES",
+      "evidence": "reference-identity+numerical-reproduction",
+      "import": true,
+      "use": "calibration-only",
+      "sources": [
+        ".planning/STATE.md",
+        "session79b_explicit_formula_forces_lorentzian.py"
+      ],
+      "caveat": "Known zero/prime information is part of the calibration; never score as independent discovery."
+    },
+    {
+      "id": "L02",
+      "title": "Cauchy-Loewner matrix structure",
+      "status": "SURVIVES",
+      "evidence": "derived-structure+machine-precision-check",
+      "import": true,
+      "use": "candidate-structure",
+      "sources": [
+        "session59b_cauchy_structure.py",
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Re-derive symbolically in RHAstra."
+    },
+    {
+      "id": "L03",
+      "title": "Even/odd parity decomposition",
+      "status": "SURVIVES",
+      "evidence": "algebraic-symmetry",
+      "import": true,
+      "use": "structural-gate",
+      "sources": [
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Should be exact; failure indicates implementation error."
+    },
+    {
+      "id": "L04",
+      "title": "Lorentzian signature conjecture",
+      "status": "OPEN",
+      "evidence": "broad-finite-computation",
+      "import": true,
+      "use": "conjecture-and-stress-test",
+      "sources": [
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Not a proof shortcut; arithmetic content appears RH-hard."
+    },
+    {
+      "id": "L05",
+      "title": "Finite interval verification of odd-block negativity",
+      "status": "SURVIVES",
+      "evidence": "interval-arithmetic-finite",
+      "import": true,
+      "use": "regression-benchmark",
+      "sources": [
+        "session80b_interval_verification.py",
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Only sampled finite matrices/parameters."
+    },
+    {
+      "id": "L06",
+      "title": "Near-zero critical direction and extreme cancellation",
+      "status": "SURVIVES",
+      "evidence": "numerical-spectral-diagnostic",
+      "import": true,
+      "use": "stability-gate",
+      "sources": [
+        ".planning/STATE.md",
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Generic loose norm bounds are unlikely to resolve a 1e-7 to 1e-8 margin."
+    },
+    {
+      "id": "L07",
+      "title": "Cramer primes destroy signature",
+      "status": "SURVIVES",
+      "evidence": "randomized-falsification",
+      "import": true,
+      "use": "negative-control",
+      "sources": [
+        "session54_cramer_concentration.py",
+        "session79b_explicit_formula_forces_lorentzian.py",
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Shows prime specificity, not why actual primes succeed."
+    },
+    {
+      "id": "L08",
+      "title": "Generic margin-drain concentration",
+      "status": "CIRCULAR",
+      "evidence": "random-model-stress-test",
+      "import": true,
+      "use": "rejection-rule",
+      "sources": [
+        "session54_cramer_concentration.py",
+        ".planning/STATE.md"
+      ],
+      "caveat": "Do not assume independent/noise-like prime phases can close the needed bound."
+    },
+    {
+      "id": "L09",
+      "title": "Naive heat-kernel/modular shortcut",
+      "status": "KILLED",
+      "evidence": "model-mismatch+explicit-formula-reconstruction",
+      "import": true,
+      "use": "rejection-rule",
+      "sources": [
+        ".planning/STATE.md"
+      ],
+      "caveat": "Require out-of-sample improvement beyond the exact explicit-formula baseline."
+    },
+    {
+      "id": "L10",
+      "title": "ESPRIT recovery of approximate zero frequencies",
+      "status": "SURVIVES",
+      "evidence": "numerical-inverse-spectral-diagnostic",
+      "import": true,
+      "use": "diagnostic-only",
+      "sources": [
+        "session60_esprit_unitarity.py",
+        ".planning/STATE.md"
+      ],
+      "caveat": "Frequency recovery is not spectral completeness or RH evidence."
+    },
+    {
+      "id": "L11",
+      "title": "Operator lift K_odd = D + H",
+      "status": "OPEN",
+      "evidence": "finite-section-evidence+formal-analogy",
+      "import": true,
+      "use": "high-priority-candidate",
+      "sources": [
+        "session82_operator_lift.py"
+      ],
+      "caveat": "Domain, principal-value kernel, boundedness and self-adjointness require fresh proofs."
+    },
+    {
+      "id": "L12",
+      "title": "Gauge-symmetry no-go theorem",
+      "status": "SURVIVES",
+      "evidence": "elementary-unitary-equivalence",
+      "import": true,
+      "use": "cheap-candidate-rejection",
+      "sources": [
+        "docs/operator_framework.tex"
+      ],
+      "caveat": "Recheck hypotheses for every candidate; theorem applies only when t-dependence is removable by unitary conjugation."
+    },
+    {
+      "id": "L13",
+      "title": "Spectral completeness obstacle",
+      "status": "OPEN",
+      "evidence": "logical-proof-obligation",
+      "import": true,
+      "use": "mandatory-Hilbert-Polya-gate",
+      "sources": [
+        "docs/operator_framework.tex"
+      ],
+      "caveat": "Numerical trajectory-to-zero matching cannot substitute for completeness."
+    },
+    {
+      "id": "L14",
+      "title": "Finite-T arithmetic corrections to GUE pair statistics",
+      "status": "SURVIVES",
+      "evidence": "empirical-preprint",
+      "import": false,
+      "use": "optional-late-stage-fingerprint",
+      "sources": [
+        "docs/finite_T_pair_correlation.tex"
+      ],
+      "caveat": "Independent reproduction required before becoming a gate."
+    },
+    {
+      "id": "L15",
+      "title": "Peak-gap eigenvector rigidity",
+      "status": "SURVIVES",
+      "evidence": "empirical-preprint",
+      "import": false,
+      "use": "optional-eigenfunction-fingerprint",
+      "sources": [
+        "docs/eigenvector_rigidity.tex"
+      ],
+      "caveat": "Independent reproduction and a carefully matched random-matrix control are required."
+    }
+  ]
+}
