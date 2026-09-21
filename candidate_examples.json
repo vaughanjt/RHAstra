@@ -1,0 +1,207 @@
+[
+  {
+    "id": "berry_keating_xp",
+    "name": "Berry–Keating H = xp program",
+    "references": [
+      "Berry & Keating, SIAM Review 41 (1999), 236–266"
+    ],
+    "space": {
+      "kind": "classical/quantum phase-space model",
+      "description": "Regularized xp Hamiltonian intended to reproduce Riemann-zero spectral asymptotics.",
+      "dimension_class": "infinite",
+      "measure_or_inner_product": "model-dependent after quantization",
+      "arithmetic_input": null
+    },
+    "dynamics": {
+      "kind": "Hamiltonian flow",
+      "generator": "H = xp (regularized variants)",
+      "primitive_objects": "periodic-orbit structure incomplete in bare model",
+      "primitive_length_rule": null,
+      "repetition_rule": null
+    },
+    "operator": {
+      "kind": "quantization of xp",
+      "formula": "(xp + px)/2 in a basic symmetric quantization; domain/boundary choices matter",
+      "canonicality": "choice-dependent",
+      "self_adjoint_status": "partial",
+      "spectrum_type": "depends on regularization/self-adjoint extension"
+    },
+    "trace_formula": {
+      "status": "semiclassical",
+      "prime_length_status": "missing",
+      "prime_power_weight_status": "missing",
+      "archimedean_status": "partial",
+      "notes": "Strong on the smooth counting term; bare xp does not supply the full prime orbit structure."
+    },
+    "symmetries": {
+      "functional_equation_mechanism": "x↔p / duality motifs in variants",
+      "expected_rmt_class": "GUE-like target",
+      "duality": "phase-space exchange"
+    },
+    "generalization": {
+      "dirichlet_L": "partial",
+      "global_L_functions": "unknown"
+    },
+    "claims": [
+      {
+        "claim": "Regularized xp reproduces the smooth counting asymptotics semiclassically.",
+        "status": "published-claim",
+        "source": "Berry & Keating 1999"
+      }
+    ]
+  },
+  {
+    "id": "deninger_arithmetic_dynamics",
+    "name": "Deninger arithmetic dynamical systems",
+    "references": [
+      "Christopher Deninger, Dynamical systems for arithmetic schemes, arXiv:1807.06400"
+    ],
+    "space": {
+      "kind": "arithmetic dynamical/ringed-space construction",
+      "description": "Infinite-dimensional real dynamical systems attached to arithmetic schemes.",
+      "dimension_class": "infinite",
+      "measure_or_inner_product": null,
+      "arithmetic_input": "normal schemes finite type over Spec(Z)"
+    },
+    "dynamics": {
+      "kind": "R-flow",
+      "generator": "flow generator / cohomological analog sought",
+      "primitive_objects": "periodic orbits related to closed points",
+      "primitive_length_rule": "arithmetic closed-point norms suggest logarithmic lengths",
+      "repetition_rule": "periodic-orbit iterates"
+    },
+    "operator": {
+      "kind": "cohomological/dynamical generator sought",
+      "formula": null,
+      "canonicality": "unknown",
+      "self_adjoint_status": "missing",
+      "spectrum_type": null
+    },
+    "trace_formula": {
+      "status": "conjectural",
+      "prime_length_status": "partial",
+      "prime_power_weight_status": "unknown",
+      "archimedean_status": "unknown",
+      "notes": "Geometric dictionary is compelling; full RH-producing trace/positivity mechanism is incomplete."
+    },
+    "symmetries": {
+      "functional_equation_mechanism": "cohomological duality expected in the program",
+      "expected_rmt_class": null,
+      "duality": "arithmetic/cohomological"
+    },
+    "generalization": {
+      "dirichlet_L": "unknown",
+      "global_L_functions": "partial"
+    },
+    "claims": [
+      {
+        "claim": "Constructs infinite-dimensional R-dynamical systems whose periodic orbits are related to closed points.",
+        "status": "proved",
+        "source": "arXiv:1807.06400"
+      }
+    ]
+  },
+  {
+    "id": "connes_adele_class",
+    "name": "Connes adèle-class / noncommutative geometry",
+    "references": [
+      "Alain Connes, arXiv:math/9811068",
+      "Connes–Consani–Marcolli, arXiv:math/0703392"
+    ],
+    "space": {
+      "kind": "adèle-class noncommutative quotient",
+      "description": "Noncommutative geometric space associated with adèle classes.",
+      "dimension_class": "noncommutative",
+      "measure_or_inner_product": "operator-algebraic/Hilbert-space realization",
+      "arithmetic_input": "adèles and idèles of a global field"
+    },
+    "dynamics": {
+      "kind": "scaling / idèle-class action",
+      "generator": "scaling action",
+      "primitive_objects": "periodic orbits associated with finite places",
+      "primitive_length_rule": "log p in the Q case",
+      "repetition_rule": "iterates produce multiples of log p"
+    },
+    "operator": {
+      "kind": "spectral realization / scaling generator",
+      "formula": null,
+      "canonicality": "natural",
+      "self_adjoint_status": "partial",
+      "spectrum_type": "critical zeros as absorption spectrum; noncritical zeros would appear as resonances in the 1998 formulation"
+    },
+    "trace_formula": {
+      "status": "partial",
+      "prime_length_status": "exact",
+      "prime_power_weight_status": "partial",
+      "archimedean_status": "partial",
+      "notes": "Explicit formulas are interpreted as a trace formula; RH is tied to completing the trace/positivity picture."
+    },
+    "symmetries": {
+      "functional_equation_mechanism": "global adelic duality / Fourier-Poisson structure",
+      "expected_rmt_class": null,
+      "duality": "Fourier/adelic"
+    },
+    "generalization": {
+      "dirichlet_L": "natural",
+      "global_L_functions": "natural"
+    },
+    "claims": [
+      {
+        "claim": "Gives a spectral interpretation of critical zeros and a trace-formula interpretation of explicit formulas.",
+        "status": "published-claim",
+        "source": "arXiv:math/9811068"
+      }
+    ]
+  },
+  {
+    "id": "selberg_template",
+    "name": "Selberg trace-formula template",
+    "references": [
+      "Classical Selberg trace formula / Selberg zeta theory"
+    ],
+    "space": {
+      "kind": "hyperbolic quotient template",
+      "description": "A control model: geometric spectrum paired with primitive closed geodesics.",
+      "dimension_class": "finite",
+      "measure_or_inner_product": "hyperbolic volume / L2",
+      "arithmetic_input": "depends on arithmetic quotient"
+    },
+    "dynamics": {
+      "kind": "geodesic flow",
+      "generator": "Laplacian/geodesic flow",
+      "primitive_objects": "primitive closed geodesics",
+      "primitive_length_rule": "geometric geodesic lengths",
+      "repetition_rule": "iterated geodesics"
+    },
+    "operator": {
+      "kind": "Laplace–Beltrami",
+      "formula": "Δ",
+      "canonicality": "forced",
+      "self_adjoint_status": "proved",
+      "spectrum_type": "well-developed spectral theory"
+    },
+    "trace_formula": {
+      "status": "exact",
+      "prime_length_status": "missing",
+      "prime_power_weight_status": "wrong",
+      "archimedean_status": "unknown",
+      "notes": "Excellent structural template, but not itself the Riemann zeta trace formula."
+    },
+    "symmetries": {
+      "functional_equation_mechanism": "Selberg-zeta functional equation in appropriate settings",
+      "expected_rmt_class": "symmetry-class dependent",
+      "duality": "spectral/geodesic"
+    },
+    "generalization": {
+      "dirichlet_L": "unknown",
+      "global_L_functions": "partial"
+    },
+    "claims": [
+      {
+        "claim": "Provides an exact spectral/closed-geodesic trace formula.",
+        "status": "proved",
+        "source": "classical Selberg trace formula"
+      }
+    ]
+  }
+]
