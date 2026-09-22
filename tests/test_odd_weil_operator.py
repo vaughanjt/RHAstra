@@ -43,13 +43,13 @@ def test_legacy_code_normalization_regression_lambda20():
     assert abs(eigvals[-1] - mp.mpf("-1.0838189478357864e-6")) < mp.mpf("1e-15")
 
 
-def test_domain_report_does_not_claim_self_adjointness_or_continuum_model():
+def test_domain_report_attributes_realization_without_claiming_positivity():
     candidate = OddWeilOperatorCandidate(lambda_squared=20, dps=30)
     report = candidate.operator.domain_report()
 
     assert report.hilbert_space.startswith("ell^2")
     assert report.symmetry_status == EvidenceStatus.DERIVED
-    assert report.closability_status == EvidenceStatus.UNKNOWN
-    assert report.self_adjointness_status == EvidenceStatus.UNKNOWN
-    assert report.continuum_representation_status == EvidenceStatus.NOT_IMPLEMENTED
+    assert report.closability_status == EvidenceStatus.PUBLISHED_CLAIM
+    assert report.self_adjointness_status == EvidenceStatus.PUBLISHED_CLAIM
+    assert report.continuum_representation_status == EvidenceStatus.DERIVED
     assert candidate.positivity_report().status == EvidenceStatus.CONJECTURAL
