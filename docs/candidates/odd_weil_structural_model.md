@@ -186,3 +186,7 @@ renamed positivity inequality as a solution.
 At cutoffs 20 and 50, the pole extremizers closely align with the lowest-Q modes (squared overlaps above 0.99999999 at the sampled sizes). The pole-neutral projection norms increase over these samples; this does not establish a limiting vector or an exact null direction.
 
 The hardest reported case, cutoff 50 and N=10, was recomputed at 100 digits. Relative differences from 70 digits were {'one_minus_r': '4.2995639e-40', 'min_Q': '4.2734137e-40'}. This guards against gross cancellation error but is not rigorous certification.
+
+## Follow-up: a cutoff obstruction
+
+The [pole-neutral boundary audit](pole_neutral_boundary_obstruction.md) shows that individual compressed prime shifts do not preserve the pole-neutral subspace. Any proposed projection/intertwiner must retain or control this exact boundary defect.
