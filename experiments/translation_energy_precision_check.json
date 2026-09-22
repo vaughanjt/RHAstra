@@ -1,0 +1,13 @@
+{
+  "cutoff": 50,
+  "N": 10,
+  "comparison_dps": [
+    70,
+    100
+  ],
+  "relative_differences": {
+    "one_minus_r": "4.2995639e-40",
+    "min_Q": "4.2734137e-40"
+  },
+  "note": "Precision stability only; not an interval certificate."
+}

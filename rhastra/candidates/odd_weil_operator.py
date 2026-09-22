@@ -29,7 +29,7 @@ class OddWeilOperatorCandidate(CandidateAdapter):
         return CandidateMetadata(
             candidate_id="legacy-odd-weil-ell2",
             name="Odd Weil Cauchy–Loewner coefficient operator",
-            family="formal symmetric operator on ell^2",
+            family="odd Weil form with canonical self-adjoint realization",
             description=(
                 "Natural coefficient-space lift of the odd-parity Weil matrix "
                 "to a symmetric quadratic form on c_00 subset ell^2(N)."
@@ -50,9 +50,9 @@ class OddWeilOperatorCandidate(CandidateAdapter):
                     "RHAstra algebraic parity reduction",
                 ),
                 Claim(
-                    "A self-adjoint realization on ell^2 exists.",
-                    EvidenceStatus.UNKNOWN,
-                    None,
+                    "A canonical self-adjoint form realization on ell^2 exists.",
+                    EvidenceStatus.PUBLISHED_CLAIM,
+                    "CCM arXiv:2511.22755v1 Props. 3.3-3.4; normalization audit",
                 ),
                 Claim(
                     "The operator is non-positive on its full domain.",
@@ -91,7 +91,8 @@ class OddWeilOperatorCandidate(CandidateAdapter):
             mechanism="conjectured non-positivity of the odd coefficient-space quadratic form",
             status=EvidenceStatus.CONJECTURAL,
             notes=(
-                "Finite negative sections are evidence only. Closability, self-adjointness, "
-                "and a global upper bound remain open proof obligations."
+                "Finite negative sections are evidence only. Full odd Weil positivity "
+                "requires the stronger inequality -K >= v v*, including the "
+                "negative rank-one pole term. See the normalization audit."
             ),
         )

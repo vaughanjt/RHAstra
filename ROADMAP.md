@@ -45,15 +45,20 @@ Established:
 - arithmetic coefficient generator using the legacy executable normalization;
 - regression test at a knife-edge finite section.
 
-Open proof obligations:
-1. derive the correct archimedean normalization from first principles;
-2. prove coefficient asymptotics uniformly in the relevant parameter range;
-3. prove or disprove closability of the quadratic form;
-4. construct and identify a self-adjoint realization, if one exists;
-5. only then attack global non-positivity;
-6. derive, rather than assume, any continuum/unitary representation.
+Normalization audit completed:
+- executable diagonal matches the correlation functional;
+- the finite tail constant and triangular overlap are derived;
+- a unitary Fourier representation onto reflection-odd L2 is identified;
+- closability/canonical realization are attributed to a literature theorem;
+- the full odd Weil target is corrected to `-K >= v v*`.
 
-See `docs/candidates/odd_weil_operator.md`.
+Open proof obligations:
+1. prove coefficient/tail estimates uniformly in the relevant cutoff range;
+2. establish rank-one domination on the closed form domain;
+3. address the even sector and all-cutoff quantifiers;
+4. derive any claimed trace-spectrum identification independently.
+
+See `docs/candidates/odd_weil_normalization_audit.md`.
 
 ## Milestone 3 — Mutation grammar
 

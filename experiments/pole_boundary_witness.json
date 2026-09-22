@@ -1,0 +1,14 @@
+{
+  "cutoff": 20,
+  "prime_shift": 2,
+  "dps": 60,
+  "coefficients": [
+    "0.462059837105707852424570345478691108346048974",
+    "-0.886848750877987494539587360366718626713594021"
+  ],
+  "initial_pole_moment_abs": "2.6574657384844779153e-62",
+  "shifted_pole_moment_imag": "-0.561223085000262053940225575182929046057163958",
+  "boundary_defect_imag": "0.561223085000262053940225575182929046057163958",
+  "identity_residual_abs": "1.555753819e-61",
+  "provenance": "direct physical-space integrals; no truncation of shifted function; no zeta-zero input"
+}
