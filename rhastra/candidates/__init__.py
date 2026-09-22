@@ -10,6 +10,7 @@ from .base import (
     TraceDecomposition,
 )
 from .static import StaticCandidateAdapter
+from .odd_weil_operator import OddWeilOperatorCandidate
 
 __all__ = [
     "CandidateAdapter",
@@ -20,4 +21,5 @@ __all__ = [
     "SymmetryReport",
     "TraceDecomposition",
     "StaticCandidateAdapter",
+    "OddWeilOperatorCandidate",
 ]
