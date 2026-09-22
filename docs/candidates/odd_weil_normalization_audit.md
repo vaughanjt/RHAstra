@@ -172,3 +172,5 @@ At lambda_squared=20, N=3, 45-digit arithmetic gives
 
 The smaller positive margin belongs to the actual odd Weil form. Neither
 finite result proves a sign for larger sections or for other cutoffs.
+
+For the subsequent structural direction, see [the translation-gradient model](odd_weil_structural_model.md). It constructs an independent positive energy and identifies exactly which mass and moment terms remain to be dominated.
