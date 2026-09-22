@@ -10,7 +10,6 @@ from .base import (
     TraceDecomposition,
 )
 from .static import StaticCandidateAdapter
-from .odd_weil_operator import OddWeilOperatorCandidate
 
 __all__ = [
     "CandidateAdapter",
@@ -23,3 +22,12 @@ __all__ = [
     "StaticCandidateAdapter",
     "OddWeilOperatorCandidate",
 ]
+
+
+def __getattr__(name):
+    # The operator base imports EvidenceStatus; eagerly importing its adapter
+    # here re-enters the partly initialized operators package.
+    if name == "OddWeilOperatorCandidate":
+        from .odd_weil_operator import OddWeilOperatorCandidate
+        return OddWeilOperatorCandidate
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
