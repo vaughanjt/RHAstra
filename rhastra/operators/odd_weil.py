@@ -9,7 +9,8 @@ lambda, the matrix coefficients define a symmetric quadratic form on c_00(N),
 a dense subspace of ell^2(N). Finite matrices are exact compressions of this
 formal infinite matrix.
 
-No self-adjoint closure is claimed here.
+The canonical form realization is identified by a literature theorem; see
+docs/candidates/odd_weil_normalization_audit.md. No RH claim is made.
 """
 
 from __future__ import annotations
@@ -114,13 +115,11 @@ def project_odd_block(full_matrix: mp.matrix) -> mp.matrix:
 
 @dataclass(frozen=True)
 class LegacyWeilCoefficients:
-    """Arithmetic coefficients matching the legacy executable normalization.
+    """Coefficients matching the legacy executable and the correlation formula.
 
-    The archived paper draft and the executable code use different formulas for
-    the archimedean diagonal. This class intentionally reproduces
-    connes_crossterm.py, because that is what generated the archived numerical
-    experiments. The normalization discrepancy must be resolved before any
-    theorem-level use.
+    The normalization was checked against Connes--Consani--Moscovici,
+    arXiv:2511.22755v1, equation (4.4). The legacy class name is retained for
+    compatibility. See docs/candidates/odd_weil_normalization_audit.md.
     """
 
     lambda_squared: float
@@ -213,8 +212,8 @@ class LegacyWeilCoefficients:
 class OddWeilOperatorLift:
     """Formal odd-parity operator on c_00 subset ell^2(N).
 
-    This object provides coefficient formulas and finite compressions. It does
-    not assert that the infinite matrix is closable or self-adjoint.
+    This object provides coefficient formulas and finite compressions. The canonical
+    form realization uses the literature result identified in the audit note.
     """
 
     coefficients: LegacyWeilCoefficients
@@ -245,12 +244,13 @@ class OddWeilOperatorLift:
             hilbert_space="ell^2(N_{>=1})",
             dense_core="c_00(N_{>=1}) (finitely supported sequences)",
             symmetry_status=EvidenceStatus.DERIVED,
-            closability_status=EvidenceStatus.UNKNOWN,
-            self_adjointness_status=EvidenceStatus.UNKNOWN,
-            continuum_representation_status=EvidenceStatus.NOT_IMPLEMENTED,
+            closability_status=EvidenceStatus.PUBLISHED_CLAIM,
+            self_adjointness_status=EvidenceStatus.PUBLISHED_CLAIM,
+            continuum_representation_status=EvidenceStatus.DERIVED,
             notes=(
-                "Finite sections define a real symmetric form on c_00. "
-                "A closed/self-adjoint realization and any unitary continuum "
-                "L^2 model require separate proofs."
+                "Normalization and odd Fourier unitary map are identified in the audit. "
+                "Canonical form realization follows by bounded perturbation of "
+                "CCM arXiv:2511.22755v1 Props. 3.3-3.4 and Theorem 3.6. "
+                "Minimal-operator essential self-adjointness is not claimed."
             ),
         )
