@@ -1,0 +1,157 @@
+{
+  "version": 2,
+  "source_repository": "vaughanjt/RiemannHypothesisProof",
+  "purpose": "Transfer durable findings into RHAstra while preserving evidence status and dead ends.",
+  "findings": [
+    {
+      "id": "L01",
+      "title": "Weil explicit-formula barrier reconstruction",
+      "status": "SURVIVES",
+      "use": "calibration-only",
+      "sources": [
+        ".planning/STATE.md",
+        "session79b_explicit_formula_forces_lorentzian.py"
+      ]
+    },
+    {
+      "id": "L02",
+      "title": "Cauchy-Loewner matrix structure",
+      "status": "SURVIVES",
+      "use": "candidate-structure",
+      "sources": [
+        "session59b_cauchy_structure.py",
+        "connes_crossterm.py",
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "caveat": "Legacy executable and paper draft disagree on the archimedean diagonal normalization."
+    },
+    {
+      "id": "L03",
+      "title": "Even/odd parity decomposition",
+      "status": "SURVIVES",
+      "use": "structural-gate",
+      "sources": [
+        "docs/lorentzian_weil_conjecture.tex"
+      ],
+      "rhastra_status": "re-derived"
+    },
+    {
+      "id": "L04",
+      "title": "Lorentzian signature conjecture",
+      "status": "OPEN",
+      "use": "conjecture-and-stress-test",
+      "sources": [
+        "docs/lorentzian_weil_conjecture.tex"
+      ]
+    },
+    {
+      "id": "L05",
+      "title": "Finite interval verification of odd-block negativity",
+      "status": "SURVIVES",
+      "use": "finite-regression",
+      "sources": [
+        "session80b_interval_verification.py"
+      ]
+    },
+    {
+      "id": "L06",
+      "title": "Near-zero critical direction",
+      "status": "SURVIVES",
+      "use": "numerical-sensitivity-gate",
+      "sources": [
+        ".planning/STATE.md",
+        "docs/lorentzian_weil_conjecture.tex"
+      ]
+    },
+    {
+      "id": "L07",
+      "title": "Cramer primes destroy signature",
+      "status": "SURVIVES",
+      "use": "negative-control",
+      "sources": [
+        "session54_cramer_concentration.py",
+        "session79b_explicit_formula_forces_lorentzian.py"
+      ]
+    },
+    {
+      "id": "L08",
+      "title": "Generic margin-drain concentration",
+      "status": "CIRCULAR",
+      "use": "rejection-rule",
+      "sources": [
+        "session54_cramer_concentration.py",
+        ".planning/STATE.md"
+      ]
+    },
+    {
+      "id": "L09",
+      "title": "Naive heat-kernel/modular shortcut",
+      "status": "KILLED",
+      "use": "rejection-rule",
+      "sources": [
+        ".planning/STATE.md"
+      ]
+    },
+    {
+      "id": "L10",
+      "title": "ESPRIT recovery of approximate zero frequencies",
+      "status": "SURVIVES",
+      "use": "diagnostic-only",
+      "sources": [
+        "session60_esprit_unitarity.py"
+      ]
+    },
+    {
+      "id": "L11",
+      "title": "Odd Weil operator lift",
+      "status": "OPEN",
+      "use": "high-priority-operator-candidate",
+      "sources": [
+        "session82_operator_lift.py"
+      ],
+      "rhastra_correction": "Natural first lift is a symmetric form on c_00 subset ell^2(N); the legacy L^2 continuum model is not derived.",
+      "rhastra_sources": [
+        "docs/candidates/odd_weil_operator.md",
+        "rhastra/operators/odd_weil.py"
+      ]
+    },
+    {
+      "id": "L12",
+      "title": "Gauge-symmetry no-go theorem",
+      "status": "SURVIVES",
+      "use": "cheap-candidate-rejection",
+      "sources": [
+        "docs/operator_framework.tex"
+      ]
+    },
+    {
+      "id": "L13",
+      "title": "Spectral completeness obstacle",
+      "status": "OPEN",
+      "use": "mandatory-Hilbert-Polya-gate",
+      "sources": [
+        "docs/operator_framework.tex"
+      ]
+    },
+    {
+      "id": "L14",
+      "title": "Finite-T arithmetic corrections to GUE pair statistics",
+      "status": "SURVIVES",
+      "evidence": "empirical-preprint",
+      "use": "optional-late-stage-fingerprint",
+      "sources": [
+        "docs/finite_T_pair_correlation.tex"
+      ]
+    },
+    {
+      "id": "L15",
+      "title": "Peak-gap eigenvector rigidity",
+      "status": "SURVIVES",
+      "evidence": "empirical-preprint",
+      "use": "optional-eigenfunction-fingerprint",
+      "sources": [
+        "docs/eigenvector_rigidity.tex"
+      ]
+    }
+  ]
+}
