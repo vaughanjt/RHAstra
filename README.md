@@ -59,19 +59,18 @@ executable derivation.
 
 ## First operator candidate
 
-RHAstra now contains a reconstruction of the legacy odd Weil / Cauchy--Loewner
-operator idea. The important correction is that the immediately justified
-infinite space is
+RHAstra reconstructs the legacy odd Weil / Cauchy--Loewner kernel on
+`c_00(N) ⊂ ell^2(N)`, with exact finite compressions.
 
-```text
-c_00(N) ⊂ ell^2(N)
-```
+The [normalization audit](docs/candidates/odd_weil_normalization_audit.md)
+identifies its correlation test function and unitary Fourier representation.
+The canonical self-adjoint form realization is attributed to an existing
+literature theorem and a bounded-perturbation transfer (`published-claim`).
+The old index-as-position continuum construction is not used.
 
-not an assumed continuum `L^2[0,L]` space.
-
-The candidate implements the exact parity-reduced coefficient kernel and finite
-compressions, while explicitly leaving closability and self-adjointness
-`UNKNOWN`.
+The actual odd Weil positivity target includes a negative rank-one pole term:
+`Q_odd = -K - v v*`. Proving `K <= 0` alone is insufficient. Positivity remains
+conjectural; no operator spectrum is identified with the zeta zeros.
 
 See [docs/candidates/odd_weil_operator.md](docs/candidates/odd_weil_operator.md).
 
