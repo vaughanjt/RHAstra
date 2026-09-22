@@ -25,21 +25,35 @@ Implemented:
 - package metadata and pytest suite;
 - GitHub Actions test workflow.
 
-Interface:
-
-    candidate.spectral_side(f)
-    candidate.geometric_side(f)
-    candidate.archimedean_side(f)
-    candidate.symmetry_report()
-    candidate.positivity_report()
-
 Next control adapters:
 1. Selberg-like toy trace model;
 2. Berry–Keating smooth-counting model;
 3. finite-prime adelic/scaling toy model.
 
-Milestone 2 is complete when at least two independent executable adapters pass
-through the same test-function and gate interface.
+Milestone 2 is complete when at least two independent executable trace adapters
+pass through the same test-function and gate interface.
+
+## Operator Track A — Odd Weil coefficient operator ◐
+
+The legacy Session 82 continuum lift has been reconstructed conservatively.
+
+Established:
+- exact Cauchy--Loewner parity reduction;
+- natural coefficient-space core `c_00(N) ⊂ ell^2(N)`;
+- real symmetric formal kernel;
+- finite sections as exact compressions;
+- arithmetic coefficient generator using the legacy executable normalization;
+- regression test at a knife-edge finite section.
+
+Open proof obligations:
+1. derive the correct archimedean normalization from first principles;
+2. prove coefficient asymptotics uniformly in the relevant parameter range;
+3. prove or disprove closability of the quadratic form;
+4. construct and identify a self-adjoint realization, if one exists;
+5. only then attack global non-positivity;
+6. derive, rather than assume, any continuum/unitary representation.
+
+See `docs/candidates/odd_weil_operator.md`.
 
 ## Milestone 3 — Mutation grammar
 
