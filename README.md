@@ -18,8 +18,8 @@ an inverse-spectral search:
 
 ## Research rules
 
-1. A candidate receives credit only for structure that is generated naturally by
-   the space/dynamics.
+1. A candidate receives credit only for structure that is **generated naturally**
+   by the space/dynamics.
 2. Known zeta-zero locations may be used in explicitly labeled calibration
    experiments, never as hidden input to a proposed construction.
 3. Unknown and unimplemented claims stay unknown; they are not scored as partial
@@ -42,7 +42,7 @@ A serious candidate should eventually explain:
 
 ## Candidate adapter contract
 
-Every executable candidate implements:
+Every executable trace candidate implements:
 
 ```python
 candidate.spectral_side(test_function)
@@ -56,6 +56,24 @@ The base interface lives in `rhastra/candidates/base.py`. Literature-only
 descriptions are wrapped by `StaticCandidateAdapter`, whose numerical methods
 raise `NotImplementedError` rather than pretending descriptive evidence is an
 executable derivation.
+
+## First operator candidate
+
+RHAstra now contains a reconstruction of the legacy odd Weil / Cauchy--Loewner
+operator idea. The important correction is that the immediately justified
+infinite space is
+
+```text
+c_00(N) ⊂ ell^2(N)
+```
+
+not an assumed continuum `L^2[0,L]` space.
+
+The candidate implements the exact parity-reduced coefficient kernel and finite
+compressions, while explicitly leaving closability and self-adjointness
+`UNKNOWN`.
+
+See [docs/candidates/odd_weil_operator.md](docs/candidates/odd_weil_operator.md).
 
 ## Calibration benchmark
 
@@ -74,11 +92,8 @@ python -m pip install -e ".[dev]"
 pytest
 ```
 
-Legacy top-level scripts remain for exploratory use while functionality migrates
-into the `rhastra` package.
-
 ## Current milestones
 
 See [ROADMAP.md](ROADMAP.md). Milestone 2 establishes the executable candidate
-boundary; Milestone 3 will define a constrained mutation grammar over candidate
-geometry, dynamics, domains, measures, cocycles, and archimedean structure.
+boundary. The operator track is now pursuing the smallest mathematically
+inevitable infinite-dimensional lift before any continuum geometry is assumed.
